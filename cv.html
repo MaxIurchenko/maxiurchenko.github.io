@@ -1,21 +1,135 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Maksim Iurchenko — manufacturing, automation, software engineering and applied AI."><meta name="theme-color" content="#101511"><title>CV Summary | Maksim Iurchenko</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css"></head>
-<body><header class="header"><div class="wrap nav">
-<a class="brand" href="index.html"><span class="mark">MI.</span><span><strong>Maksim Iurchenko</strong><small>ENGINEERING · SOFTWARE · APPLIED AI</small></span></a>
-<button class="menu" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
-<nav id="navlinks"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="experience.html" class="">Experience</a><a href="education.html" class="">Education</a><a href="research.html" class="">Research</a><a href="marginum.html" class="">Marginum</a><a href="craif.html" class="">Craif</a><a href="skills.html" class="">Skills</a><a href="cv.html" class="active">CV</a><a href="contact.html" class="">Contact</a><a class="nav-cta" href="contact.html">Contact ↗</a></nav>
-</div></header><main>
-<section class="page-hero"><div class="wrap"><p class="breadcrumbs">PORTFOLIO / PROFESSIONAL SUMMARY</p><p class="eyebrow">CV / PROFILE SUMMARY</p><h1>Maksim Iurchenko</h1><p class="lead">CNC manufacturing · Automation · Software development · Applied AI</p><div class="button-row"><a class="btn primary" href="mailto:6008510@gmail.com">Contact ↗</a><a class="btn" href="https://www.linkedin.com/in/maxiurchenko" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div></section>
-<section class="section light"><div class="wrap two"><div><h2>Professional summary</h2></div><div><p class="bigcopy">Cross-disciplinary engineering professional combining CNC programming and automation experience with software development and postgraduate computer science research.</p><p>Experienced in manufacturing workflows, CAD/CAM post-processors, robotic-arm control programs, data-processing tools and research projects involving hyperspectral imaging, neural networks, medical image analysis and signal processing.</p></div></div></section>
-<section class="section"><div class="wrap"><h2>Career highlights</h2><div class="education-list">
-<article class="education-item"><p class="label">2026 — Present</p><h3>CNC Machining · Buckley Systems · Auckland, NZ</h3><p>Current precision manufacturing role.</p></article>
-<article class="education-item"><p class="label">2022 — 2026</p><h3>CNC Programmer / Automation Engineer · Juhani Haavisto Oy · Finland</h3><p>CNC programs, CAD/CAM post-processors and robotic-arm control programs.</p></article>
-<article class="education-item"><p class="label">2025</p><h3>Data Specialist · Craif Inc. · Finland</h3><p>AI-related medical imaging workflows, segmentation, measurement, 3D visualisation and generative-model research.</p></article>
-<article class="education-item"><p class="label">2023 — 2024</p><h3>Data Specialist · Marginum · Finland</h3><p>Signal peak detection/classification, noisy data processing and compression/storage optimisation themes.</p></article>
-</div></div></section>
-<section class="section dark"><div class="wrap two"><div><h2>Education</h2></div><div><p><strong>MSc Computer Science / Information Technology</strong> — University of Eastern Finland, Sep 2023–May 2025. Final average 9.2/10.</p><p>Thesis: <em>Hyperspectral Imaging and Neural Networks for Metal Alloy Identification.</em></p><p><strong>Bachelor’s degree in Computer Science / IT</strong> — Moscow Technological Institute (VTU), Sep 2007–Jun 2012.</p><p>Certificates: CNC Machinist Certificate; six-month CNC Operator course; Java Beginner Certificate.</p></div></div></section>
-<section class="section"><div class="wrap"><h2>Core technical skills</h2><div class="tags"><span>CNC programming</span><span>CAD/CAM</span><span>Automation</span><span>Robotic-arm workflows</span><span>Python</span><span>Java</span><span>C#</span><span>SQL</span><span>1C</span><span>HTML/CSS/JavaScript</span><span>React</span><span>Django</span><span>Spring Boot</span><span>TensorFlow</span><span>PyTorch</span><span>Neural networks</span><span>Image processing</span><span>Hyperspectral imaging</span><span>PCA</span><span>Signal processing</span><span>Peak detection</span><span>Git</span><span>Docker</span><span>Jenkins</span></div></div></section>
-</main><footer class="footer"><div class="wrap footer-inner"><span>© Maksim Iurchenko · Portfolio</span><div class="footer-links"><a href="mailto:6008510@gmail.com">Email</a><a href="https://www.linkedin.com/in/maxiurchenko" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MaxIurchenko" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
-<script>const menu=document.querySelector('.menu');const nav=document.querySelector('#navlinks');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}</script></body></html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Maksim Iurchenko — manufacturing, automation, software engineering and applied AI.">
+        <meta name="theme-color" content="#101511">
+        <title>CV Summary | Maksim Iurchenko</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="wrap nav">
+                <a class="brand" href="index.html"><span class="mark">MI.</span><span><strong>Maksim Iurchenko</strong><small>ENGINEERING · SOFTWARE · APPLIED AI</small></span></a>
+                <button class="menu" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
+                <nav id="navlinks">
+                    <a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="experience.html" class="">Experience</a><a href="education.html" class="">Education</a><a href="research.html" class="">Research</a><a href="marginum.html" class="">Marginum</a><a href="craif.html" class="">Craif</a><a href="skills.html" class="">Skills</a><a href="cv.html" class="active">CV</a><a href="contact.html" class="">Contact</a><a class="nav-cta" href="contact.html">Contact ↗</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="page-hero">
+                <div class="wrap">
+                    <p class="breadcrumbs">PORTFOLIO / PROFESSIONAL SUMMARY</p>
+                    <h1>Maksim Iurchenko</h1>
+                    <p class="lead">CNC manufacturing · Automation · Software development · Applied AI</p>
+                    <div class="button-row">
+                        <a class="btn primary" href="mailto:6008510@gmail.com">Contact ↗</a><a class="btn" href="https://www.linkedin.com/in/maxiurchenko" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                    </div>
+                </div>
+            </section>
+            <section class="section light">
+                <div class="wrap two">
+                    <div>
+                        <h2>Professional summary</h2>
+                    </div>
+                    <div>
+                        <p class="bigcopy">Cross-disciplinary engineering professional combining CNC programming and automation experience with software development and postgraduate computer science research.</p>
+                        <p>Experienced in manufacturing workflows, CAD/CAM post-processors, robotic-arm control programs, data-processing tools and research projects involving hyperspectral imaging, neural networks, medical image analysis and signal processing.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="wrap">
+                    <h2>Career highlights</h2>
+                    <div class="education-list">
+                        <article class="education-item">
+                            <p class="label">2026 — Present</p>
+                            <h3>CNC Machining · Buckley Systems · Auckland, NZ</h3>
+                            <p>Current precision manufacturing role.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2022 — 2026</p>
+                            <h3>CNC Programmer / Automation Engineer · Juhani Haavisto Oy · Finland</h3>
+                            <p>CNC programs, CAD/CAM post-processors and robotic-arm control programs.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2025</p>
+                            <h3>Data Specialist · Craif Inc. · Finland</h3>
+                            <p>AI-related medical imaging workflows, segmentation, measurement, 3D visualisation and generative-model research.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2023 — 2024</p>
+                            <h3>Data Specialist · Marginum · Finland</h3>
+                            <p>Signal peak detection/classification, noisy data processing and compression/storage optimisation themes.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2023 &#8212; 2025</p>
+                            <h3>Data Scientist &middot; UEF &middot; Finland</h3>
+                            <p>I completed my Master&rsquo;s degree at the University of Eastern Finland, where I worked on several short-term projects involving software development, data analysis, and machine learning.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2021 &#8212; 2022</p>
+                            <h3>CNC Programmer / Automation Engineer &middot; OKU Oy &middot; Finland</h3>
+                            <p>CNC programs, CAD/CAM post-processors and robotic-arm control programs.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2020 &#8212; 2021</p>
+                            <h3>CNC Machinist &middot; Engineering Technology &middot; Russia</h3>
+                            <p>CNC programs, CAD/CAM post-processors and robotic-arm control programs.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2016 &#8212; 2020</p>
+                            <h3>CNC Machinist &middot; Strela &middot; Russia</h3>
+                            <p>CNC programs, CAD/CAM post-processors and robotic-arm control programs.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2010 &#8212; 2016</p>
+                            <h3>Developer &middot; Mirsnabjenia &middot; Rossia</h3>
+                            <p>Signal peak detection/classification, noisy data processing and compression/storage optimisation themes.</p>
+                        </article>
+                        <article class="education-item">
+                            <p class="label">2008 &#8212; 2010</p>
+                            <h3>CNC Machinist &middot; Strela &middot; Russia</h3>
+                            <p>Developed accounting software using 1C, maintained servers, and built websites.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section dark">
+                <div class="wrap two">
+                    <div>
+                        <h2>Education</h2>
+                    </div>
+                    <div>
+                        <p><strong>MSc Computer Science / Information Technology</strong> — University of Eastern Finland, Sep 2023–May 2025. Final average 9.2/10.</p>
+                        <p>Thesis: <em>Hyperspectral Imaging and Neural Networks for Metal Alloy Identification.</em></p>
+                        <p><strong>Bachelor’s degree in Computer Science / IT</strong> — Moscow Technological Institute (VTU), Sep 2007–Jun 2012.</p>
+                        <p>Certificates: CNC Machinist Certificate; six-month CNC Operator course; Java Beginner Certificate.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="wrap">
+                    <h2>Core technical skills</h2>
+                    <div class="tags">
+                        <span>CNC programming</span><span>CAD/CAM</span><span>Automation</span><span>Robotic-arm workflows</span><span>Python</span><span>Java</span><span>C#</span><span>SQL</span><span>1C</span><span>HTML/CSS/JavaScript</span><span>React</span><span>Django</span><span>Spring Boot</span><span>TensorFlow</span><span>PyTorch</span><span>Neural networks</span><span>Image processing</span><span>Hyperspectral imaging</span><span>PCA</span><span>Signal processing</span><span>Peak detection</span><span>Git</span><span>Docker</span><span>Jenkins</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="wrap footer-inner">
+                <span>© Maksim Iurchenko · Portfolio</span>
+                <div class="footer-links">
+                    <a href="mailto:max.iurchenko87@gmail.com">Email</a><a href="https://www.linkedin.com/in/maxiurchenko" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MaxIurchenko" target="_blank" rel="noreferrer">GitHub ↗</a>
+                </div>
+            </div>
+        </footer>
+        <script>const menu=document.querySelector('.menu');const nav=document.querySelector('#navlinks');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}</script>
+    </body>
+</html>
