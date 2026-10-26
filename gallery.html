@@ -12,6 +12,81 @@
         <style>.gallery-intro { max-width: 760px; color: var(--muted); } .gallery-filters { display: flex; gap: 9px; flex-wrap: wrap; margin: 28px 0 30px; } .gallery-filter { border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 9px 14px; cursor: pointer; font: 12px "DM Mono",monospace; } .gallery-filter:hover, .gallery-filter.active { background: var(--accent); border-color: var(--accent); color: #162015; } .gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; } .gallery-card { border: 1px solid var(--line); background: var(--panel); padding: 0; text-align: left; color: var(--ink); cursor: pointer; min-width: 0; overflow: hidden; transition: transform .18s,border-color .18s; } .gallery-card:hover { transform: translateY(-3px); border-color: var(--accent); } .gallery-thumb { position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg,#27392b,#111712); display: grid; place-items: center; overflow: hidden; } .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; } .gallery-card:hover .gallery-thumb img { transform: scale(1.04); } .thumb-placeholder { padding: 20px; text-align: center; color: var(--accent); font: 12px "DM Mono",monospace; } .gallery-thumb .play { position: absolute; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: rgba(182,243,107,.95); color: #162015; font-size: 21px; padding-left: 3px; } .gallery-card-copy { padding: 16px 17px 18px; } .gallery-card-copy .meta { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); } .gallery-card-copy h3 { font-size: 17px; margin: 7px 0 5px; } .gallery-card-copy p { font-size: 12px; color: var(--muted); margin: 0; } .gallery-note { margin-top: 26px; padding: 17px 20px; border-left: 3px solid var(--accent); background: var(--panel); color: var(--muted); font-size: 13px; } .lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.92); align-items: center; justify-content: center; padding: 24px; } .lightbox.open { display: flex; } .lightbox-inner { width: min(1100px,100%); max-height: 100%; display: flex; flex-direction: column; gap: 12px; } .lightbox-close { align-self: flex-end; border: 1px solid #647065; background: #182019; color: #fff; padding: 8px 13px; cursor: pointer; font-size: 20px; } .lightbox-media { display: grid; place-items: center; min-height: 120px; max-height: 78vh; } .lightbox-media img { max-width: 100%; max-height: 78vh; object-fit: contain; } .lightbox-media iframe { width: min(100%,1100px); aspect-ratio: 16/9; border: 0; background: #000; } .lightbox-caption { color: #e5ece4; font-size: 14px; } @media (max-width:900px){ .gallery-grid {  grid-template-columns: repeat(2,minmax(0,1fr)); } } @media (max-width:600px){ .gallery-grid {  grid-template-columns: 1fr; }  .lightbox {  padding: 12px; } }</style>
         <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
     </head>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const lightbox = document.getElementById('gallery-lightbox');
+
+    if (!lightbox) {
+        console.error('Missing gallery-lightbox HTML element.');
+        return;
+    }
+
+    const lightboxImage = document.getElementById('lightbox-image');
+    const caption = document.getElementById('lightbox-caption');
+
+    document.querySelectorAll('.gallery-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+            const title = card.dataset.title || '';
+            caption.textContent = title;
+
+            // Remove an old YouTube player, if present
+            lightbox.querySelector('iframe')?.remove();
+
+            if (card.dataset.kind === 'video') {
+                if (lightboxImage) {
+                    lightboxImage.style.display = 'none';
+                }
+
+                const iframe = document.createElement('iframe');
+                iframe.src =
+                    'https://www.youtube.com/embed/' +
+                    card.dataset.video;
+                iframe.title = title;
+                iframe.allow =
+                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.allowFullscreen = true;
+                iframe.style.cssText =
+                    'width:90vw;max-width:1000px;aspect-ratio:16/9;border:0;';
+
+                lightbox.insertBefore(iframe, caption);
+            } else {
+                if (lightboxImage) {
+                    lightboxImage.src = card.dataset.src;
+                    lightboxImage.alt = title;
+                    lightboxImage.style.display = 'block';
+                }
+            }
+
+            lightbox.classList.add('active');
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.querySelector('iframe')?.remove();
+
+        if (lightboxImage) {
+            lightboxImage.src = '';
+            lightboxImage.style.display = 'block';
+        }
+    }
+
+    lightbox.addEventListener('click', function (event) {
+        if (
+            event.target === lightbox ||
+            event.target.closest('.lightbox-close')
+        ) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+});
+</script>
     <body>
         <header class="header">
             <div class="wrap nav">
@@ -46,54 +121,90 @@
                                 <h3>Hyperspectral imaging</h3>
                                 <p>Research, spectral data and analysis</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-1.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button>
+                        <button class="gallery-card" data-category="software" data-kind="video" data-video="I8vt6B-SjkU" data-title="Automation demonstration" data-description="Automation and robotics demonstration">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-1.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="https://img.youtube.com/vi/I8vt6B-SjkU/hqdefault.jpg" alt="Automation demonstration video preview" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                                <span class="play">▶</span>
+                            </div>
+                            <div class="gallery-card-copy">
+                                <span class="meta">Software &amp; Research · Video</span>
+                                <h3>SpecNN - Software for Hyperspectral images</h3>
+                                <p>Click to watch the video</p>
+                            </div>
+                        </button>
+                        <button class="gallery-card" data-category="software" data-kind="video" data-video="MkCUz1vOzNM" data-title="Automation demonstration" data-description="Automation and robotics demonstration">
+                            <div class="gallery-thumb">
+                                <img src="https://img.youtube.com/vi/MkCUz1vOzNM/hqdefault.jpg" alt="Automation demonstration video preview" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                                <span class="play">▶</span>
+                            </div>
+                            <div class="gallery-card-copy">
+                                <span class="meta">Software &amp; Research · Video</span>
+                                <h3>ENVI_Max - Software for Hyperspectral images</h3>
+                                <p>Click to watch the video</p>
+                            </div>
+                        </button>
+                        <button class="gallery-card" data-category="automation" data-kind="video" data-video="QajlFhePwTM" data-title="Automation demonstration" data-description="Automation and robotics demonstration">
+                            <div class="gallery-thumb">
+                                <img src="https://img.youtube.com/vi/QajlFhePwTM/hqdefault.jpg" alt="Automation demonstration video preview" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                                <span class="play">▶</span>
+                            </div>
+                            <div class="gallery-card-copy">
+                                <span class="meta">Automation &amp; Robotics · Video</span>
+                                <h3>Robot Arm project</h3>
+                                <p>Click to watch the video</p>
+                            </div>
+                        </button>
+                        <button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-1.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                            <div class="gallery-thumb">
+                                <img src="./image/cnc/cnc-1.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-2.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button>
+                        <button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-2.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-2.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-2.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-3.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button>
+                        <button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-3.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-3.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-3.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-4.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-4.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-4.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-4.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-5.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-5.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-5.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-5.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-6.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-6.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-6.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-6.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
@@ -118,54 +229,54 @@
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-9.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-9.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-9.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-9.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-10.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-10.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-10.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-10.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-11.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-11.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-11.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-11.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-12.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-12.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-12.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-12.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-13.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-13.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-13.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-13.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
                                 <h3>CNC machining</h3>
                                 <p>Machine setup, tooling and production work</p>
                             </div>
-                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-14.jpg" data-title="CNC machining" data-description="CNC machining and manufacturing">
+                        </button><button class="gallery-card" data-category="manufacturing" data-kind="image" data-src="./image/cnc/cnc-14.jpeg" data-title="CNC machining" data-description="CNC machining and manufacturing">
                             <div class="gallery-thumb">
-                                <img src="./image/cnc/cnc-14.jpg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
+                                <img src="./image/cnc/cnc-14.jpeg" alt="CNC machining" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><span class="thumb-placeholder" hidden>ADD PHOTO<br>image/cnc-01.jpg</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">CNC &amp; Manufacturing</span>
@@ -193,14 +304,15 @@
                                 <p>Robotic arms and production workflows</p>
                             </div>
                         </button>
-                        <button class="gallery-card" data-category="automation" data-kind="video" data-video="https://youtu.be/QajlFhePwTM" data-title="Automation demonstration" data-description="https://youtu.be/QajlFhePwTM">
+                        <button class="gallery-card" data-category="automation" data-kind="video" data-video="QajlFhePwTM" data-title="Automation demonstration" data-description="Automation and robotics demonstration">
                             <div class="gallery-thumb">
-                                <span class="thumb-placeholder">YOUTUBE VIDEO<br>ADD VIDEO ID</span><span class="play">▶</span>
+                                <img src="https://img.youtube.com/vi/QajlFhePwTM/hqdefault.jpg" alt="Automation demonstration video preview" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                                <span class="play">▶</span>
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Automation &amp; Robotics · Video</span>
                                 <h3>Automation demonstration</h3>
-                                <p>Click to watch in the expanded player</p>
+                                <p>Click to watch the video</p>
                             </div>
                         </button>
                         <button class="gallery-card" data-category="software" data-kind="image" data-src="image/software-01.jpg" data-title="Research software" data-description="Software tools and data visualisation">
