@@ -9,85 +9,27 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style.css">
-        <style>.gallery-intro { max-width: 760px; color: var(--muted); } .gallery-filters { display: flex; gap: 9px; flex-wrap: wrap; margin: 28px 0 30px; } .gallery-filter { border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 9px 14px; cursor: pointer; font: 12px "DM Mono",monospace; } .gallery-filter:hover, .gallery-filter.active { background: var(--accent); border-color: var(--accent); color: #162015; } .gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; } .gallery-card { border: 1px solid var(--line); background: var(--panel); padding: 0; text-align: left; color: var(--ink); cursor: pointer; min-width: 0; overflow: hidden; transition: transform .18s,border-color .18s; } .gallery-card:hover { transform: translateY(-3px); border-color: var(--accent); } .gallery-thumb { position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg,#27392b,#111712); display: grid; place-items: center; overflow: hidden; } .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; } .gallery-card:hover .gallery-thumb img { transform: scale(1.04); } .thumb-placeholder { padding: 20px; text-align: center; color: var(--accent); font: 12px "DM Mono",monospace; } .gallery-thumb .play { position: absolute; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: rgba(182,243,107,.95); color: #162015; font-size: 21px; padding-left: 3px; } .gallery-card-copy { padding: 16px 17px 18px; } .gallery-card-copy .meta { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); } .gallery-card-copy h3 { font-size: 17px; margin: 7px 0 5px; } .gallery-card-copy p { font-size: 12px; color: var(--muted); margin: 0; } .gallery-note { margin-top: 26px; padding: 17px 20px; border-left: 3px solid var(--accent); background: var(--panel); color: var(--muted); font-size: 13px; } .lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.92); align-items: center; justify-content: center; padding: 24px; } .lightbox.open { display: flex; } .lightbox-inner { width: min(1100px,100%); max-height: 100%; display: flex; flex-direction: column; gap: 12px; } .lightbox-close { align-self: flex-end; border: 1px solid #647065; background: #182019; color: #fff; padding: 8px 13px; cursor: pointer; font-size: 20px; } .lightbox-media { display: grid; place-items: center; min-height: 120px; max-height: 78vh; } .lightbox-media img { max-width: 100%; max-height: 78vh; object-fit: contain; } .lightbox-media iframe { width: min(100%,1100px); aspect-ratio: 16/9; border: 0; background: #000; } .lightbox-caption { color: #e5ece4; font-size: 14px; } @media (max-width:900px){ .gallery-grid {  grid-template-columns: repeat(2,minmax(0,1fr)); } } @media (max-width:600px){ .gallery-grid {  grid-template-columns: 1fr; }  .lightbox {  padding: 12px; } }</style>
+        <style>.gallery-intro { max-width: 760px; color: var(--muted); } .gallery-filters { display: flex; gap: 9px; flex-wrap: wrap; margin: 28px 0 30px; } .gallery-filter { border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 9px 14px; cursor: pointer; font: 12px "DM Mono",monospace; } .gallery-filter:hover, .gallery-filter.active { background: var(--accent); border-color: var(--accent); color: #162015; } .gallery-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; } .gallery-card { border: 1px solid var(--line); background: var(--panel); padding: 0; text-align: left; color: var(--ink); cursor: pointer; min-width: 0; overflow: hidden; transition: transform .18s,border-color .18s; } .gallery-card:hover { transform: translateY(-3px); border-color: var(--accent); } .gallery-thumb { position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg,#27392b,#111712); display: grid; place-items: center; overflow: hidden; } .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; } .gallery-card:hover .gallery-thumb img { transform: scale(1.04); } .thumb-placeholder { padding: 20px; text-align: center; color: var(--accent); font: 12px "DM Mono",monospace; } .gallery-thumb .play { position: absolute; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: rgba(182,243,107,.95); color: #162015; font-size: 21px; padding-left: 3px; } .gallery-card-copy { padding: 16px 17px 18px; } .gallery-card-copy .meta { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); } .gallery-card-copy h3 { font-size: 17px; margin: 7px 0 5px; } .gallery-card-copy p { font-size: 12px; color: var(--muted); margin: 0; } .gallery-note { margin-top: 26px; padding: 17px 20px; border-left: 3px solid var(--accent); background: var(--panel); color: var(--muted); font-size: 13px; } .lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.92); align-items: center; justify-content: center; padding: 24px; } .lightbox.open { display: flex; } .lightbox-inner { width: min(1100px,100%); max-height: 100%; display: flex; flex-direction: column; gap: 12px; } .lightbox-close { align-self: flex-end; border: 1px solid #647065; background: #182019; color: #fff; padding: 8px 13px; cursor: pointer; font-size: 20px; } .lightbox-media { display: grid; place-items: center; min-height: 120px; max-height: 78vh; } .lightbox-media img { max-width: 100%; max-height: 78vh; object-fit: contain; } .lightbox-media iframe { width: min(100%,1100px); aspect-ratio: 16/9; border: 0; background: #000; } .lightbox-caption { color: #e5ece4; font-size: 14px; } @media (max-width:900px){ .gallery-grid {  grid-template-columns: repeat(2,minmax(0,1fr)); } } @media (max-width:600px){ .gallery-grid {  grid-template-columns: 1fr; }  .lightbox {  padding: 12px; } }
+
+.lightbox.open { display:flex; }
+.lightbox-inner { width:min(1200px,100%); max-height:100%; }
+.lightbox-media { position:relative; overflow:hidden; width:100%; touch-action:pan-y; }
+.lightbox-media img { display:block; max-width:100%; max-height:78vh; object-fit:contain; transform-origin:center; cursor:zoom-in; user-select:none; -webkit-user-drag:none; }
+.lightbox-media img.is-zoomed { cursor:grab; }
+.lightbox-media img.is-dragging { cursor:grabbing; }
+.lightbox-media iframe { display:block; width:min(100%,1100px); aspect-ratio:16/9; max-height:78vh; border:0; background:#000; }
+.lightbox-toolbar { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.lightbox-toolbar button, .lightbox-nav { border:1px solid #647065; background:#182019; color:#fff; padding:9px 13px; cursor:pointer; font:13px "DM Mono",monospace; }
+.lightbox-toolbar button:hover, .lightbox-nav:hover { border-color:var(--accent); color:var(--accent); }
+.lightbox-nav { position:absolute; top:50%; transform:translateY(-50%); z-index:2; border-radius:50%; width:44px; height:44px; padding:0; font-size:24px; background:rgba(24,32,25,.88); }
+.lightbox-prev { left:10px; } .lightbox-next { right:10px; }
+.lightbox-counter { color:#cbd5cb; font:12px "DM Mono",monospace; }
+@media(max-width:600px) { .lightbox { padding:8px; } .lightbox-nav { width:38px; height:38px; } }
+
+</style>
         <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
     </head>
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const lightbox = document.getElementById('gallery-lightbox');
-
-    if (!lightbox) {
-        console.error('Missing gallery-lightbox HTML element.');
-        return;
-    }
-
-    const lightboxImage = document.getElementById('lightbox-image');
-    const caption = document.getElementById('lightbox-caption');
-
-    document.querySelectorAll('.gallery-card').forEach(function (card) {
-        card.addEventListener('click', function () {
-            const title = card.dataset.title || '';
-            caption.textContent = title;
-
-            // Remove an old YouTube player, if present
-            lightbox.querySelector('iframe')?.remove();
-
-            if (card.dataset.kind === 'video') {
-                if (lightboxImage) {
-                    lightboxImage.style.display = 'none';
-                }
-
-                const iframe = document.createElement('iframe');
-                iframe.src =
-                    'https://www.youtube.com/embed/' +
-                    card.dataset.video;
-                iframe.title = title;
-                iframe.allow =
-                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-                iframe.allowFullscreen = true;
-                iframe.style.cssText =
-                    'width:90vw;max-width:1000px;aspect-ratio:16/9;border:0;';
-
-                lightbox.insertBefore(iframe, caption);
-            } else {
-                if (lightboxImage) {
-                    lightboxImage.src = card.dataset.src;
-                    lightboxImage.alt = title;
-                    lightboxImage.style.display = 'block';
-                }
-            }
-
-            lightbox.classList.add('active');
-        });
-    });
-
-    function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightbox.querySelector('iframe')?.remove();
-
-        if (lightboxImage) {
-            lightboxImage.src = '';
-            lightboxImage.style.display = 'block';
-        }
-    }
-
-    lightbox.addEventListener('click', function (event) {
-        if (
-            event.target === lightbox ||
-            event.target.closest('.lightbox-close')
-        ) {
-            closeLightbox();
-        }
-    });
-
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-            closeLightbox();
-        }
-    });
-});
-</script>
-    <body>
+<body>
         <header class="header">
             <div class="wrap nav">
                 <a class="brand" href="index.html"><span class="mark">MI.</span><span><strong>Maksim Iurchenko</strong><small>ENGINEERING · SOFTWARE · APPLIED AI</small></span></a><button class="menu" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
@@ -118,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Master&apos;s Thesis Bucklet</h3>
-                                <p>Hypperspectral image and Neural Network for metal alloys identification</p>
+                                <h3>Master&apos;s Thesis Booklet</h3>
+                                <p>Hyperspectral imaging and neural networks for metal alloy identification</p>
                             </div>
                         </button>
                         <button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/Buttle_count.jpg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
@@ -138,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Spectral derevative</h3>
+                                <h3>Spectral derivative</h3>
                                 <p>Research, spectral data and analysis</p>
                             </div>
                         </button>
@@ -148,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Metal alloys specra</h3>
+                                <h3>Metal alloy spectra</h3>
                                 <p>Research, spectral data and analysis</p>
                             </div>
                         </button>
@@ -161,14 +103,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <h3>SDM Metal</h3>
                                 <p>Heat map</p>
                             </div>
-                        </button><button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/Metall.jpg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
+                        </button><button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/Metall.jpeg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
                             <div class="gallery-thumb">
                                 <img src="image/spectral/Metall.jpeg" alt="Hyperspectral imaging research" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
                                 <h3>All samples scan</h3>
-                                <p>Metal alloy scaned by specim IQ</p>
+                                <p>Metal alloy scan captured with Specim IQ</p>
                             </div>
                         </button><button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/flowers.jpeg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
                             <div class="gallery-thumb">
@@ -186,17 +128,17 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Gender fish tasck</h3>
-                                <p>Acuracy 63% solved by MLP</p>
+                                <h3>Fish gender classification</h3>
+                                <p>63% accuracy using an MLP</p>
                             </div>
-                        </button><button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/image/spectral/MLP_fish.jpeg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
+                        </button><button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/MLP_fish.jpeg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
                             <div class="gallery-thumb">
                                 <img src="image/spectral/MLP_fish.jpeg" alt="Hyperspectral imaging research" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Gender fish tasck</h3>
-                                <p>Acuracy 63% solved by MLP</p>
+                                <h3>Fish gender classification</h3>
+                                <p>63% accuracy using an MLP</p>
                             </div>
                         </button>
                         <button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/scan_fish.jpeg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
@@ -205,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Gender fish tasck</h3>
+                                <h3>Fish gender classification</h3>
                                 <p>Scan processing</p>
                             </div>
                         </button>
@@ -226,10 +168,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
                                 <h3>Marginum is Finland best medical startup</h3>
-                                <p>Peack detaction task</p>
+                                <p>Peak detection task</p>
                             </div>
                         </button>
-                        <button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/mirsnabmsk.jpg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
+                        <button class="gallery-card" data-category="software" data-kind="image" data-src="image/spectral/mirsnabmsk.jpeg" data-title="Hyperspectral imaging research" data-description="Hyperspectral imaging and data analysis">
                             <div class="gallery-thumb">
                                 <img src="image/spectral/mirsnabmsk.jpeg" alt="Hyperspectral imaging research" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false">
                             </div>
@@ -255,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                             <div class="gallery-card-copy">
                                 <span class="meta">Software &amp; Research</span>
-                                <h3>Rock pain</h3>
+                                <h3>Rock painting analysis</h3>
                                 <p>Compare spectral and RGB image</p>
                             </div>
                         </button>
@@ -503,11 +445,162 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </div>
         <script>
-const menu=document.querySelector('.menu'),nav=document.querySelector('#navlinks');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}
-const cards=[...document.querySelectorAll('.gallery-card')];document.querySelectorAll('.gallery-filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.gallery-filter').forEach(b=>b.classList.toggle('active',b===button));const f=button.dataset.filter;cards.forEach(c=>c.hidden=!(f==='all'||c.dataset.category===f));}));
-const box=document.getElementById('lightbox'),media=document.getElementById('lightboxMedia'),caption=document.getElementById('lightboxCaption');function closeViewer(){box.classList.remove('open');media.replaceChildren();document.body.style.overflow='';}
-cards.forEach(card=>card.addEventListener('click',()=>{media.replaceChildren();const title=card.dataset.title||'Gallery item';if(card.dataset.kind==='image'){const img=document.createElement('img');img.src=card.dataset.src;img.alt=title;img.onerror=()=>{media.textContent='Add the photo file to the image folder: '+card.dataset.src};media.appendChild(img);}else{const id=card.dataset.video;if(!id||id==='REPLACE_WITH_YOUTUBE_ID'){media.textContent='Add a valid YouTube video ID to this gallery card in gallery.html.';}else{const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1';frame.title=title;frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;media.appendChild(frame);}}caption.textContent=title+(card.dataset.description?' — '+card.dataset.description:'');box.classList.add('open');document.body.style.overflow='hidden';}));
-document.getElementById('lightboxClose').addEventListener('click',closeViewer);box.addEventListener('click',e=>{if(e.target===box)closeViewer();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeViewer();});
+(() => {
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('#navlinks');
+  if (menu && nav) menu.addEventListener('click', () => {
+    const opened = nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(opened));
+  });
+
+  const cards = [...document.querySelectorAll('.gallery-card')];
+  const filters = [...document.querySelectorAll('.gallery-filter')];
+  const box = document.getElementById('lightbox');
+  const media = document.getElementById('lightboxMedia');
+  const caption = document.getElementById('lightboxCaption');
+  const close = document.getElementById('lightboxClose');
+  if (!box || !media || !caption || !close) {
+    console.error('Gallery viewer HTML is incomplete.');
+    return;
+  }
+
+  let index = 0, scale = 1, x = 0, y = 0, drag = null, touchX = null;
+  const visible = () => cards.filter(card => !card.hidden);
+
+  function transform(img) {
+    img.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+    img.classList.toggle('is-zoomed', scale > 1);
+  }
+  function zoom(value, img) {
+    scale = Math.max(1, Math.min(4, value));
+    if (scale === 1) x = y = 0;
+    if (img) transform(img);
+  }
+  function reset() { scale = 1; x = y = 0; }
+
+  function button(label, title, handler, className = '') {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = label; b.title = title;
+    b.setAttribute('aria-label', title); b.className = className;
+    b.addEventListener('click', handler);
+    return b;
+  }
+  function closeViewer() {
+    box.classList.remove('open');
+    media.replaceChildren(); // Removes the iframe and stops video playback.
+    caption.textContent = '';
+    document.body.style.overflow = '';
+    reset();
+  }
+  function previous() {
+    const items = visible();
+    index = (index - 1 + items.length) % items.length;
+    render(items[index]);
+  }
+  function next() {
+    const items = visible();
+    index = (index + 1) % items.length;
+    render(items[index]);
+  }
+  function render(card) {
+    media.replaceChildren(); caption.textContent = ''; reset();
+    const title = card.dataset.title || 'Gallery item';
+    const description = card.dataset.description || '';
+    caption.textContent = title + (description ? ' — ' + description : '');
+
+    let img = null;
+    if (card.dataset.kind === 'video') {
+      const id = card.dataset.video || '';
+      if (!id || id === 'REPLACE_WITH_YOUTUBE_ID') {
+        media.textContent = 'Add a valid YouTube video ID to this gallery card.';
+      } else {
+        const frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+        frame.title = title;
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.allowFullscreen = true;
+        media.appendChild(frame);
+      }
+    } else {
+      img = document.createElement('img');
+      img.src = card.dataset.src || '';
+      img.alt = title; img.draggable = false;
+      img.onerror = () => { media.textContent = 'Image not found. Check path: ' + (card.dataset.src || '(empty)'); };
+      img.addEventListener('dblclick', () => zoom(scale === 1 ? 2 : 1, img));
+      img.addEventListener('wheel', e => {
+        e.preventDefault(); zoom(scale + (e.deltaY < 0 ? .25 : -.25), img);
+      }, { passive:false });
+      img.addEventListener('pointerdown', e => {
+        if (scale <= 1) return;
+        drag = { px:e.clientX, py:e.clientY, x, y };
+        img.classList.add('is-dragging');
+        img.setPointerCapture(e.pointerId);
+      });
+      img.addEventListener('pointermove', e => {
+        if (!drag) return;
+        x = drag.x + e.clientX - drag.px;
+        y = drag.y + e.clientY - drag.py;
+        transform(img);
+      });
+      const stopDrag = () => { drag = null; img.classList.remove('is-dragging'); };
+      img.addEventListener('pointerup', stopDrag);
+      img.addEventListener('pointercancel', stopDrag);
+      img.addEventListener('lostpointercapture', stopDrag);
+      media.appendChild(img);
+    }
+
+    media.append(
+      button('‹', 'Previous item', previous, 'lightbox-nav lightbox-prev'),
+      button('›', 'Next item', next, 'lightbox-nav lightbox-next')
+    );
+    const toolbar = document.createElement('div');
+    toolbar.className = 'lightbox-toolbar';
+    if (img) toolbar.append(
+      button('−', 'Zoom out', () => zoom(scale - .25, img)),
+      button('+', 'Zoom in', () => zoom(scale + .25, img)),
+      button('Reset', 'Reset zoom', () => zoom(1, img))
+    );
+    const counter = document.createElement('span');
+    counter.className = 'lightbox-counter';
+    counter.textContent = `${index + 1} / ${visible().length}`;
+    toolbar.append(counter);
+    caption.append(toolbar);
+  }
+
+  cards.forEach(card => card.addEventListener('click', () => {
+    index = visible().indexOf(card);
+    if (index < 0) return;
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    render(card);
+  }));
+
+  filters.forEach(filter => filter.addEventListener('click', () => {
+    filters.forEach(b => b.classList.toggle('active', b === filter));
+    cards.forEach(card => card.hidden = !(filter.dataset.filter === 'all' || card.dataset.category === filter.dataset.filter));
+  }));
+
+  close.addEventListener('click', closeViewer);
+  box.addEventListener('click', e => { if (e.target === box) closeViewer(); });
+  document.addEventListener('keydown', e => {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') closeViewer();
+    if (e.key === 'ArrowLeft') previous();
+    if (e.key === 'ArrowRight') next();
+    const img = media.querySelector('img');
+    if (img && (e.key === '+' || e.key === '=')) zoom(scale + .25, img);
+    if (img && e.key === '-') zoom(scale - .25, img);
+  });
+  media.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) touchX = e.touches[0].clientX;
+  }, { passive:true });
+  media.addEventListener('touchend', e => {
+    if (touchX === null || scale > 1 || !e.changedTouches.length) return;
+    const delta = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(delta) > 65) delta < 0 ? next() : previous();
+    touchX = null;
+  }, { passive:true });
+})();
 </script>
     </body>
 </html>
