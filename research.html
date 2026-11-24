@@ -1,132 +1,364 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="Maksim Iurchenko — manufacturing, automation, software engineering and applied AI.">
-        <meta name="theme-color" content="#101511">
-        <title>Research & Projects | Maksim Iurchenko</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./style.css">
-        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <header class="header">
-            <div class="wrap nav">
-                <a class="brand" href="index.html"><span class="mark">MI.</span><span><strong>Maksim Iurchenko</strong><small>ENGINEERING · SOFTWARE · APPLIED AI</small></span></a>
-                <button class="menu" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
-                <nav id="navlinks">
-                    <a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="experience.html" class="">Experience</a><a href="education.html" class="">Education</a><a href="research.html" class="active">Research</a><a href="marginum.html" class="">Marginum</a><a href="craif.html" class="">Craif</a><a href="gallery.html" class="">Gallery</a><a href="skills.html" class="">Skills</a><a href="cv.html" class="">CV</a><a href="contact.html" class="">Contact</a><a class="nav-cta" href="contact.html">Contact ↗</a>
-                </nav>
-            </div>
-        </header>
-        <main>
-            <section class="page-hero">
-                <div class="wrap">
-                    <p class="breadcrumbs">PORTFOLIO / RESEARCH</p>
-                    <h1>Applied research at the intersection of <em>imaging, data and intelligent systems.</em></h1>
-                    <p class="lead">My research experience covers hyperspectral imaging for material identification, software tools for scientific data and AI-related imaging and signal-processing workflows.</p>
-                </div>
-            </section>
-            <section class="section">
-                <div class="wrap two">
-                    <div>
-                        <p class="eyebrow">MASTER’S THESIS</p>
-                        <h2>Hyperspectral imaging for metal alloy identification.</h2>
-                        <p class="smallprint">University of Eastern Finland · 2023–2025</p>
-                    </div>
-                    <div>
-                        <p class="bigcopy">Can spectral signatures and neural networks help distinguish metal alloys?</p>
-                        <p>My Master’s thesis explored the use of hyperspectral imaging and neural networks for metal-alloy identification. The work involved preparing and inspecting spectral data, developing preprocessing and analysis workflows, and evaluating classification approaches.</p>
-                        <p>The project connects an industrial need with computational analysis: a metal-processing environment provides the problem, while spectroscopy and machine learning offer methods to investigate it.</p>
-                        <div class="tags">
-                            <span>Hyperspectral imaging</span><span>Neural networks</span><span>Classification</span><span>Data preprocessing</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section dark">
-                <div class="wrap">
-                    <div class="heading">
-                        <div>
-                            <p class="eyebrow">RESEARCH SOFTWARE</p>
-                            <h2>Tools for working with hyperspectral data.</h2>
-                        </div>
-                        <p>Desktop utilities designed to make research data easier to inspect, prepare and analyse.</p>
-                    </div>
-                    <div class="cards">
-                        <article class="card">
-                            <small>TOOL / 01</small>
-                            <h3>ENVI data handling and visualisation</h3>
-                            <p>Research utilities for working with ENVI header/raw data, cropping and saving data, resizing or rotating images, removing bands, applying corrections and viewing RGB-style representations.</p>
-                            <div class="tags">
-                                <span>Python</span><span>Data handling</span><span>Visualisation</span>
-                            </div>
-                        </article>
-                        <article class="card">
-                            <small>TOOL / 02</small>
-                            <h3>ROI-based classification workflow</h3>
-                            <p>Tools for selecting regions of interest and exploring classification results with neural-network approaches, including multilayer perceptron (MLP) and convolutional neural network (CNN) experiments.</p>
-                            <div class="tags">
-                                <span>ROI selection</span><span>MLP</span><span>CNN</span>
-                            </div>
-                        </article>
-                    </div>
-                    <p class="note">These tools were developed for research workflows. Model performance depends on data quality, sampling, hardware and evaluation design.</p>
-                </div>
-            </section>
-            <section class="section light">
-                <div class="wrap">
-                    <div class="heading">
-                        <div>
-                            <p class="eyebrow">RELATED RESEARCH EXPERIENCE</p>
-                            <h2>Other data-focused work.</h2>
-                        </div>
-                        <p>Separate projects with distinct contexts and objectives.</p>
-                    </div>
-                    <div class="detail-grid">
-                        <article class="panel">
-                            <p class="label">Medical imaging</p>
-                            <h3>Craif Inc.</h3>
-                            <p>X-ray image analysis, tumour segmentation and shape/size analysis, 2D-to-3D reconstruction and visualisation.</p>
-                            <a href="craif.html">Read more ↗</a>
-                        </article>
-                        <article class="panel">
-                            <p class="label">Signal processing</p>
-                            <h3>Marginum</h3>
-                            <p>Peak detection and classification in noisy sensor/modem data, with compression and storage optimisation themes.</p>
-                            <a href="marginum.html">Read more ↗</a>
-                        </article>
-                        <article class="panel">
-                            <p class="label">Industrial systems</p>
-                            <h3>CNC & automation</h3>
-                            <p>Machine-aware programs and automated workflows informed by real manufacturing constraints.</p>
-                            <a href="experience.html">Read more ↗</a>
-                        </article>
-                    </div>
-                </div>
-            </section>
-            <section class="section">
-                <div class="wrap two">
-                    <div>
-                        <h2>Where I would like to take this work.</h2>
-                    </div>
-                    <div>
-                        <p class="bigcopy">I am interested in making research methods more useful, reproducible and accessible to people working with real data and physical systems.</p>
-                        <p>Possible directions include machine vision for manufacturing, hyperspectral data restoration, reproducible GPU/HPC workflows, and interactive visualisation of scientific data. These are interests and possible future directions, not claims of completed projects.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="wrap footer-inner">
-                <span>© Maksim Iurchenko · Portfolio</span>
-                <div class="footer-links">
-                    <a href="mailto:6008510@gmail.com">Email</a><a href="https://www.linkedin.com/in/maxiurchenko" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MaxIurchenko" target="_blank" rel="noreferrer">GitHub ↗</a>
-                </div>
-            </div>
-        </footer>
-        <script>const menu=document.querySelector('.menu');const nav=document.querySelector('#navlinks');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}</script>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maksim Iurchenko — selected engineering, software, hyperspectral imaging, applied AI, medical imaging, robotics and automation projects.">
+  <meta name="theme-color" content="#101511">
+  <title>Research & Projects | Maksim Iurchenko</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    :root{--rp-ink:#18231c;--rp-muted:#5b695f;--rp-line:#d8e0d9;--rp-soft:#f3f7f3;--rp-green:#245b3a}
+    html{scroll-behavior:smooth}
+    .rp-hero{padding:clamp(3rem,7vw,6rem) 0 2.5rem}
+    .rp-kicker,.rp-label{font:500 .7rem/1.5 "DM Mono",monospace;letter-spacing:.11em;text-transform:uppercase;color:#5b6c60}
+    .rp-hero h1{max-width:950px;font-size:clamp(2.35rem,5.7vw,5rem);line-height:1.04;letter-spacing:-.055em;margin:.7rem 0 1.3rem}
+    .rp-hero h1 em{font-style:normal;color:#39724d}
+    .rp-lead{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.8;max-width:850px;color:#526157}
+    .rp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:2rem 0}
+    .rp-stat{padding:1.1rem 1.2rem;border:1px solid var(--rp-line);border-radius:13px;background:#fff}
+    .rp-stat strong{display:block;font-size:1.6rem;letter-spacing:-.04em;color:var(--rp-ink)}
+    .rp-stat span{font-size:.78rem;color:var(--rp-muted)}
+    .rp-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 0}
+    .rp-nav a{border:1px solid #cbd7cd;border-radius:999px;padding:.55rem .85rem;background:#fff;color:#245238!important;text-decoration:none;font-size:.8rem;font-weight:700}
+    .rp-nav a:hover{background:#eaf2eb}
+    .rp-section{padding:clamp(3rem,6vw,5rem) 0;scroll-margin-top:2rem}
+    .rp-section:nth-of-type(even){background:#f7f9f7}
+    .rp-heading{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:1.7rem}
+    .rp-heading h2{font-size:clamp(1.7rem,3.4vw,2.65rem);letter-spacing:-.045em;line-height:1.12;margin:.35rem 0 0}
+    .rp-heading p:last-child{max-width:48ch;color:var(--rp-muted);margin:0}
+    .rp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .rp-card{overflow:hidden;border:1px solid var(--rp-line);border-radius:16px;background:#fff;box-shadow:0 8px 28px rgba(20,40,25,.045);display:flex;flex-direction:column;min-width:0}
+    .rp-card.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr)}
+    .rp-card figure{margin:0;background:#e8eee9;min-height:210px;overflow:hidden}
+    .rp-card figure img{display:block;width:100%;height:100%;min-height:210px;max-height:340px;object-fit:cover;transition:transform .35s ease}
+    .rp-card:hover figure img{transform:scale(1.025)}
+    .rp-card.wide figure img{height:100%;max-height:100%;min-height:300px}
+    .rp-card-body{padding:1.35rem 1.45rem 1.45rem;display:flex;flex-direction:column;align-items:flex-start}
+    .rp-card h3{font-size:1.2rem;line-height:1.3;margin:.3rem 0 .65rem;color:var(--rp-ink)}
+    .rp-card p{line-height:1.7;color:#526157;margin:0 0 .8rem}
+    .rp-card .rp-context{font:500 .68rem/1.5 "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#637468;margin:0}
+    .rp-tags{display:flex;flex-wrap:wrap;gap:.38rem;margin:.45rem 0 .9rem}
+    .rp-tags span{font-size:.72rem;border:1px solid #d3ded5;background:#f4f8f4;border-radius:999px;padding:.3rem .55rem;color:#34483a}
+    .rp-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto;padding-top:.3rem}
+    .rp-links a{font-size:.78rem;font-weight:700;text-decoration:none;color:#245b3a!important;border:1px solid #b9cbbd;border-radius:8px;padding:.48rem .7rem}
+    .rp-links a:hover{background:#edf4ee}
+    .rp-note{padding:1rem 1.2rem;border-left:3px solid #7ca487;background:#f0f5f0;color:#536258;border-radius:0 10px 10px 0;line-height:1.65;margin-top:1rem}
+    .rp-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+    .rp-step{padding:1.1rem 1.2rem;border:1px solid var(--rp-line);border-radius:12px;background:#fff}
+    .rp-step strong{display:block;color:#203729;margin-bottom:.25rem}
+    .rp-step span{font-size:.85rem;color:var(--rp-muted);line-height:1.6}
+    .rp-closing{padding:clamp(1.5rem,4vw,2.4rem);border:1px solid var(--rp-line);border-radius:16px;background:#f0f5f0}
+    .rp-closing p{max-width:75ch;line-height:1.75;color:#536157}
+    .rp-closing a{color:#245b3a!important;font-weight:700}
+    @media(max-width:800px){.rp-stats{grid-template-columns:repeat(2,1fr)}.rp-heading{display:block}.rp-heading p:last-child{margin-top:.7rem}.rp-card.wide{display:flex}.rp-card.wide figure img{max-height:300px}.rp-grid{grid-template-columns:1fr}}
+    @media(max-width:520px){.rp-stats{gap:.5rem}.rp-stat{padding:.8rem}.rp-stat strong{font-size:1.3rem}.rp-nav a{font-size:.73rem;padding:.48rem .65rem}.rp-timeline{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="mark">MI.</span><span><strong>Maksim Iurchenko</strong><small>ENGINEERING · SOFTWARE · APPLIED AI</small></span></a>
+    <button class="menu" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
+    <nav id="navlinks">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html">Experience</a>
+      <a href="education.html">Education</a><a href="research.html" class="active" aria-current="page">Research</a>
+      <a href="gallery.html">Gallery</a><a href="skills.html">Skills</a><a href="cv.html">CV</a><a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Contact ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="rp-hero">
+    <div class="wrap">
+      <p class="rp-kicker">PORTFOLIO / RESEARCH & SELECTED PROJECTS</p>
+      <h1>Engineering ideas, from <em>raw data to real-world systems.</em></h1>
+      <p class="rp-lead">I work across precision manufacturing, CNC programming, automation, scientific software and applied AI. My projects combine practical engineering with image and signal processing — building tools that make complex data easier to inspect, understand and use.</p>
+      <div class="rp-stats">
+        <div class="rp-stat"><strong>20+</strong><span>Years across software and engineering projects</span></div>
+        <div class="rp-stat"><strong>350–2,500 nm</strong><span>SWIR and VNIR edge of the hyperspectral research range</span></div>
+        <div class="rp-stat"><strong>ROBO Arms</strong><span>Automatisation CNC Machining processes</span></div>
+        <div class="rp-stat"><strong>3,000+ kg</strong><span>Food processed using the automated smoker</span></div>
+      </div>
+      <nav class="rp-nav" aria-label="Jump to project category">
+        <a href="#spectral">Hyperspectral imaging</a><a href="#ai">AI & computer vision</a><a href="#medical">Medical imaging</a>
+        <a href="#signals">Signal processing</a><a href="#robotics">Robotics</a><a href="#cnc">CNC & manufacturing</a>
+        <a href="#embedded">Embedded systems</a><a href="#software">Software</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="rp-section" id="spectral">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">01 / SPECTRAL SCIENCE</p><h2>Hyperspectral imaging & material analysis</h2></div><p>Research into extracting material information from hundreds of wavelength bands, supported by custom tools for data preparation, visualisation and machine learning.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card wide">
+          <figure><img src="image/spectral/Bucklet%20Of%20MT-compressed.jpg" alt="Hyperspectral scan of a metal alloy sample" loading="lazy"></figure>
+          <div class="rp-card-body">
+            <p class="rp-context">MSc thesis · University of Eastern Finland · 2023–2025</p>
+            <h3>Hyperspectral imaging and neural networks for metal alloy identification</h3>
+            <p>Master’s research investigating whether spectral signatures and neural networks can distinguish metal alloys. The work used industrial metal samples and Specim hyperspectral imaging, covering data capture, calibration, preprocessing, spectral inspection and classification experiments.</p>
+            <p>The research pipeline included dark/white reference correction, sample-region selection, removal of invalid or saturated pixels, spectral feature preparation and comparison of neural-network approaches.</p>
+            <div class="rp-tags"><span>Specim V10E</span><span>400–2500 nm</span><span>ENVI</span><span>Python</span><span>Neural networks</span></div>
+            <div class="rp-links"><a href="gallery.html">View research images ↗</a><a href="https://www.linkedin.com/in/max-iurchenko/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/Metall.jpeg" alt="Collection of metal samples scanned for spectral analysis" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Data acquisition · Spectral laboratory</p><h3>Metal sample scanning and dataset preparation</h3>
+            <p>Captured and organised hyperspectral scans of metal samples. Prepared datasets for comparison across materials and rotations, with attention to consistent calibration and usable sample regions.</p>
+            <div class="rp-tags"><span>Hyperspectral cubes</span><span>Calibration</span><span>ROI</span><span>Data quality</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/Metal_Derevatives.jpg" alt="Spectral derivative curves for metal samples" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Spectral feature engineering</p><h3>Spectral derivatives and material signatures</h3>
+            <p>Explored spectral curves and derivative representations to make differences between material responses easier to compare and interpret.</p>
+            <div class="rp-tags"><span>Spectroscopy</span><span>Derivatives</span><span>Visualisation</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/metal_heat_map.jpg" alt="Heat map visualisation of spectral data" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Spectral data visualisation</p><h3>Spatial and spectral heat-map analysis</h3>
+            <p>Visualised spectral measurements as spatial maps to inspect patterns, compare sample areas and support interpretation of the imaging data.</p>
+            <div class="rp-tags"><span>Heat maps</span><span>Image analysis</span><span>Python</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/Rock.jpg" alt="Rock art image with spectral and RGB comparison" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Imaging research · Cultural heritage</p><h3>Rock-painting spectral analysis</h3>
+            <p>Explored the comparison of RGB and spectral imagery for rock-painting documentation and analysis — an imaging direction connecting material signatures with cultural heritage.</p>
+            <div class="rp-tags"><span>RGB comparison</span><span>Hyperspectral imaging</span><span>Image analysis</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/flowers.jpeg" alt="Plant sample used in spectral imaging experiment" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Exploratory spectral experiment</p><h3>Plant and illumination response</h3>
+            <p>Used spectral imaging to explore changes in plant appearance and response under different illumination conditions.</p>
+            <div class="rp-tags"><span>Plant imaging</span><span>Spectral response</span><span>Experiment</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="rp-note">The spectral projects are presented as research and experimental work. The gallery contains additional scans, plots and supporting visual material.</p>
+    </div>
+  </section>
+
+  <section class="rp-section" id="ai">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">02 / APPLIED AI</p><h2>Machine learning & computer vision</h2></div><p>Practical experiments with neural networks, image classification and visual data interpretation.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card">
+          <figure><img src="image/spectral/Plant.jpg" alt="Classification result from an experimental neural network" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Deep learning · SpecNN</p><h3>SpecNN — hyperspectral image classification</h3>
+            <p>A Python application with a Tkinter interface for loading spectral images, selecting labelled regions, training models and classifying image pixels. The experiments compare multilayer perceptrons (MLP) and convolutional neural networks (CNN), with visual inspection of the resulting classification maps.</p>
+            <div class="rp-tags"><span>Python</span><span>PyTorch</span><span>MLP</span><span>CNN</span><span>Tkinter</span></div>
+            <div class="rp-links"><a href="gallery.html">See model outputs ↗</a></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/MLP_fish.jpeg" alt="MLP output for fish gender classification experiment" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Classification experiment</p><h3>Fish gender classification from spectral data</h3>
+            <p>An experimental MLP workflow exploring whether spectral information can support fish gender classification. The gallery records an experimental result of 63% accuracy; this is a prototype result, not a validated production system.</p>
+            <div class="rp-tags"><span>MLP</span><span>Classification</span><span>Spectral data</span><span>Experiment</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/scan_fish.jpeg" alt="Processed hyperspectral fish scan" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Image processing</p><h3>Hyperspectral scan processing</h3>
+            <p>Prepared and inspected fish scan data for downstream analysis, including visualisation and classification experiments.</p>
+            <div class="rp-tags"><span>Image processing</span><span>Data preparation</span><span>Visualisation</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <div class="rp-card-body"><p class="rp-context">Hyperspectral machine learning · 2024</p><h3>Fully connected neural networks for material classification</h3>
+            <p>Explored fully connected neural networks (FCNNs) for analysing spectral cubes and distinguishing material classes, including plastic materials. The project considered the speed and flexibility of pixel-wise spectral classification and the importance of suitable training data.</p>
+            <div class="rp-tags"><span>FCNN</span><span>Deep learning</span><span>Hyperspectral cubes</span><span>Classification</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <div class="rp-card-body"><p class="rp-context">Research topic · Visual perception & generative AI</p><h3>Gaze patterns when viewing AI-generated faces</h3>
+            <p>Research topic examining how people visually inspect real and GAN-generated faces, using gaze-tracking concepts to explore whether visual attention patterns differ when judging authentic and synthetic faces.</p>
+            <div class="rp-tags"><span>Generative AI</span><span>GANs</span><span>Eye tracking</span><span>Visual perception</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <div class="rp-card-body"><p class="rp-context">Hyperspectral machine learning · 2024</p><h3>Fully connected neural networks for material classification</h3>
+            <p>Explored fully connected neural networks (FCNNs) for analysing spectral cubes and identifying plastic materials. The project considered pixel-wise spectral classification, model performance and the importance of representative training data.</p>
+            <div class="rp-tags"><span>FCNN</span><span>Deep learning</span><span>Hyperspectral cubes</span><span>Classification</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <div class="rp-card-body"><p class="rp-context">Research topic · Visual perception & generative AI</p><h3>This is a Lie — gaze patterns in GAN-generated faces</h3>
+            <p>Research examining how people visually inspect real and GAN-generated faces, using gaze tracking to explore differences in visual attention when judging authentic and synthetic images.</p>
+            <div class="rp-tags"><span>Generative AI</span><span>GANs</span><span>Eye tracking</span><span>Visual perception</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/Buttle_count.jpg" alt="Machine vision bottle counting experiment" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Machine vision · Counting task</p><h3>Object counting with machine vision</h3>
+            <p>A visual counting task focused on detecting and counting objects in an image — a compact example of applying image analysis to an operational problem.</p>
+            <div class="rp-tags"><span>Computer vision</span><span>Object detection</span><span>Counting</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section" id="medical">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">03 / MEDICAL IMAGING</p><h2>Medical image analysis & 3D visualisation</h2></div><p>Research and data-specialist work involving medical images, segmentation, quantitative measurements and 3D reconstruction concepts.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card wide">
+          <figure><img src="image/spectral/mouth.jpeg" alt="Medical image processing and histogram equalisation visualisation" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Craif Inc. · Data Specialist · 2025</p><h3>X-ray image analysis and tumour visualisation workflows</h3>
+            <p>Worked on AI-related medical-imaging workflows involving X-ray image analysis. The work included image segmentation, tumour size and shape measurements, and approaches to 2D-to-3D reconstruction and visualisation.</p>
+            <p>Exploratory research also considered generative neural-network approaches for modelling tumour growth or metastasis. These are research directions, not clinical diagnostic claims.</p>
+            <div class="rp-tags"><span>Medical imaging</span><span>Segmentation</span><span>Image processing</span><span>2D / 3D</span><span>Generative AI research</span></div>
+            <div class="rp-links"><a href="craif.html">Craif project page ↗</a><a href="gallery.html">Gallery ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section" id="signals">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">04 / SIGNAL PROCESSING</p><h2>Sensor data, peak detection & classification</h2></div><p>Signal-processing workflows designed to extract meaningful events from noisy, high-frequency measurements.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card wide">
+          <figure><img src="image/spectral/Marginum.jpg" alt="Signal analysis project visual for Marginum" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Marginum · Data Specialist · 2023–2024</p><h3>Peak detection and event classification</h3>
+            <p>Developed a signal-processing pipeline for noisy sensor data. The workflow used Savitzky–Golay smoothing, dynamic baseline detection and SciPy peak detection, followed by amplitude-based classification of events into Tissue, Cancer and Water categories.</p>
+            <p>The project description reports tests on high-frequency data sampled at 50,000 samples per second and classification accuracy above 98% on the evaluated dataset. The work also examined limitations such as fixed thresholds, closely spaced peaks and single-channel analysis.</p>
+            <div class="rp-tags"><span>Python</span><span>SciPy</span><span>Signal processing</span><span>Peak detection</span><span>Classification</span><span>CSV export</span></div>
+            <div class="rp-links"><a href="marginum.html">Marginum project page ↗</a><a href="gallery.html">Visual material ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section" id="robotics">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">05 / ROBOTICS & AUTOMATION</p><h2>Industrial robots & automated workflows</h2></div><p>Programming and integration work connecting machine tools, robot arms and repeatable production processes.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card">
+          <figure><img src="image/spectral/robo_2.jpg" alt="Industrial robotic arm project" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Industrial robotics</p><h3>Robot-arm programming and production workflows</h3>
+            <p>Work involving robotic-arm control programs and coordination with machining operations. The focus is on repeatable movements, machine-aware process sequences and practical production requirements.</p>
+            <div class="rp-tags"><span>Yaskawa</span><span>Robot programming</span><span>Production automation</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/robo_3.jpg" alt="Robotics and automation setup" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Automation prototype</p><h3>Robot and machine integration</h3>
+            <p>Explored the relationship between robot motion, machine operations and manufacturing workflow requirements, with an emphasis on reliable sequencing and practical integration.</p>
+            <div class="rp-tags"><span>Automation</span><span>Integration</span><span>Motion sequences</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="rp-note">Some industrial work is subject to employer or customer confidentiality. Public descriptions intentionally avoid proprietary programs, part geometry and production data.</p>
+    </div>
+  </section>
+
+  <section class="rp-section" id="cnc">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">06 / PRECISION MANUFACTURING</p><h2>CNC programming & machining</h2></div><p>Hands-on manufacturing experience combined with CAD/CAM programming, postprocessor development and machine-specific process knowledge.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card wide">
+          <figure><img src="image/cnc/cnc-14.jpeg" alt="Work in a university spectral laboratory and engineering environment" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Manufacturing · CNC / CAD-CAM</p><h3>CNC machining, programming & postprocessors</h3>
+            <p>Professional work across CNC machining and programming, including five-axis milling and turning, machine-specific ISO G-code, toolpaths, setups, tooling and fixtures. Experience includes Siemens, Mazak, Haas and Fanuc environments.</p>
+            <p>At Juhani Haavisto Oy and other manufacturing roles, the work included CAD/CAM postprocessors and robotic-arm control programs supporting repeatable manufacturing workflows. Current work continues in a precision-manufacturing environment in New Zealand.</p>
+            <div class="rp-tags"><span>Siemens</span><span>MAZAK</span><span>Haas</span><span>Fanuc</span><span>CAD/CAM</span><span>G-code</span><span>Postprocessors</span></div>
+            <div class="rp-links"><a href="experience.html">Professional experience ↗</a><a href="gallery.html">Gallery ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section" id="embedded">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">07 / EMBEDDED SYSTEMS</p><h2>Arduino prototypes & practical automation</h2></div><p>Small embedded systems built to solve physical-world problems, from counting people to controlling temperature and smoke.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card">
+          <!-- <figure><img src="image/spectral/robo_2.jpg" alt="Automation and embedded control prototype" loading="lazy"></figure> -->
+          <div class="rp-card-body"><p class="rp-context">Bus passenger counting · 2018</p><h3>Passenger-counting system for buses</h3>
+            <p>Developed an Arduino-based system to count passengers boarding buses. The system was installed on 20 buses, moving the project beyond a bench prototype into practical deployment.</p>
+            <div class="rp-tags"><span>Arduino</span><span>Embedded systems</span><span>Counting</span><span>Deployment</span></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/smokehouse.jpeg" alt="Engineering prototype work" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Automatic smoker · 2017</p><h3>Automated smokehouse controller</h3>
+            <p>Designed and built an Arduino-controlled smoker for a small business. The system automated sawdust feeding and ignition, and controlled temperature and smoke. The project description reports more than 3,000 kg of fish and meat processed using the system, with a second unit also built.</p>
+            <div class="rp-tags"><span>Arduino</span><span>Temperature control</span><span>Process automation</span><span>Prototyping</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section" id="software">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">08 / SOFTWARE ENGINEERING</p><h2>Scientific tools & business applications</h2></div><p>Software built to support data workflows, business operations and engineering tasks.</p></div>
+      <div class="rp-grid">
+        <article class="rp-card">
+          <figure><img src="image/spectral/Dervetive_scale_2.jpg" alt="Spectral data visualisation produced using custom software" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Scientific software · Python / Tkinter</p><h3>ENVI Max — hyperspectral data toolkit</h3>
+            <p>A desktop utility for working with ENVI HDR/RAW datasets. Features include loading files, cropping, resizing/binning, rotation, band removal, dark and white reference correction, RGB composition and spectral-curve inspection.</p>
+            <div class="rp-tags"><span>Python</span><span>Tkinter</span><span>ENVI</span><span>NumPy</span><span>Image processing</span></div>
+            <div class="rp-links"><a href="gallery.html">See screenshots ↗</a></div>
+          </div>
+        </article>
+        <article class="rp-card">
+          <figure><img src="image/spectral/mirsnabmsk.jpg" alt="MIR SNABZHENIYA company website project" loading="lazy"></figure>
+          <div class="rp-card-body"><p class="rp-context">Web development · 2010–2016</p><h3>Websites & business software</h3>
+            <p>Earlier software-development work included company websites, including mirsnabmsk.ru, and practical business applications for accounting and warehouse workflows using 1C. Also maintained office and warehouse IT infrastructure and Windows Server environments.</p>
+            <div class="rp-tags"><span>1C</span><span>Web development</span><span>SQL</span><span>Windows Server</span><span>Business software</span></div>
+            <div class="rp-links"><a href="https://github.com/MaxIurchenko" target="_blank" rel="noopener">GitHub profile ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-section">
+    <div class="wrap">
+      <div class="rp-heading"><div><p class="rp-label">HOW THE WORK CONNECTS</p><h2>One engineering approach across different domains</h2></div><p>Across these projects, the common thread is turning a practical problem into a measurable, testable workflow.</p></div>
+      <div class="rp-timeline">
+        <div class="rp-step"><strong>1. Understand the physical problem</strong><span>Materials, machine behaviour, medical images, sensor signals or production requirements.</span></div>
+        <div class="rp-step"><strong>2. Capture and prepare data</strong><span>Imaging, calibration, filtering, segmentation, ROI selection and data validation.</span></div>
+        <div class="rp-step"><strong>3. Build the software or control logic</strong><span>Python tools, neural networks, signal pipelines, CNC programs or embedded controllers.</span></div>
+        <div class="rp-step"><strong>4. Evaluate in context</strong><span>Visualise outputs, check measurements and test whether the solution works for the real task.</span></div>
+      </div>
+      <div class="rp-closing" style="margin-top:1.5rem">
+        <p class="rp-label">COLLABORATION</p>
+        <h2>Interested in engineering, imaging or automation projects?</h2>
+        <p>I am interested in practical work at the intersection of precision manufacturing, scientific software, machine vision, robotics and applied AI. Selected images and demonstrations are available in the project gallery.</p>
+        <p><a href="gallery.html">Explore the project gallery ↗</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/max-iurchenko/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a> &nbsp;·&nbsp; <a href="contact.html">Contact ↗</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner"><span>© Maksim Iurchenko · Portfolio</span><div class="footer-links">
+    <a href="mailto:6008510@gmail.com">Email</a><a href="https://www.linkedin.com/in/max-iurchenko/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/MaxIurchenko" target="_blank" rel="noopener">GitHub ↗</a>
+  </div></div>
+</footer>
+<script>
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('#navlinks');
+  if (menu && nav) menu.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+</script>
+</body>
 </html>
